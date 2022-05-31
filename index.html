@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1 style="text-align:center;">오늘의 급식<div id="current_date"></h1>
+            <script>
+            date = new Date();
+            month = date.getMonth() + 1;
+            day = date.getDate();
+            document.getElementById("current_date").innerHTML = month + "월" + day+ "일";
+            
+            const clock = document.getElementById("clock").innerHTML=hour+":"+minutes+":"+second;
+            
+            function getClock(){
+                const now = new Date();
+                const hour = String(now.getHours()).padStart(2,"0");
+                const minutes = String(now.getMinutes()).padStart(2,"0");
+                const second = String(now.getSeconds()).padStart(2,"0");
+            }
+            getClock();
+            setInterval(getClock, 1000);
+            </script>
+        <style>
+            .table{
+                border-top: 3px solid #168;
+                border-bottom: 3px solid #168;
+            }
+            .table th{
+                color: #168;
+                background: #f0f6f9;
+                text-align: center;
+            }
+            .table th, .table td {
+                padding: 10px;
+                border: 1px solid #ddd;
+            }
+            .table th:first-child, .table td:first-child {
+                border-left: 0;
+            }
+            .table th:last-child, .table td:last-child {
+                border-right: 0;
+            }
+            .table tr td:first-child{
+                text-align: center;
+            }
+            td {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <br>
+        
+        <a style="font-size:50px;">조식</a>&emsp;&emsp;<a style="font-size:50px;">중식</a>&emsp;&emsp;<a style="font-size:50px;">석식</a><br>
+        <a>기본유부초밥</a>&emsp;&emsp;<a> 흑현미잡곡밥</a>&emsp;&emsp;<a>쌀밥</a><br>
+        <a>어묵우동</a>&emsp;&emsp;<a> </a>&emsp;&emsp;<a>시금치된장국</a>&emsp;&emsp;<a>돈육김치찌개</a><br>
+        <a style="color:white; background-color:rgb(255, 100, 100)">닭봉조림</a>&emsp;&emsp;&emsp;&emsp;<a> 김치제육볶음</a>&emsp;&emsp;<a>햄날치알계란말이</a><br>
+        <a>깍두기</a>&emsp;&emsp;&emsp;&emsp;&emsp;<a> 총각김치</a>&emsp;&emsp;&emsp;&emsp;<a style="color:white; background-color:rgb(255, 100, 100)">한입김말이강정</a>&emsp;&emsp;<br>
+        <a>한라봉주스 </a>&emsp;&emsp;&emsp;<a style="color:white; background-color:rgb(255, 100, 100)">모짜치즈볼</a>&emsp;&emsp;&emsp;<a>깍두기</a><br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a> 청포도</a>&emsp;&emsp;&emsp;&emsp;&emsp;<a style="color:white; background-color:rgb(255, 100, 100)">아이스슈/바닐라</a><br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a> 제주감귤주스100</a><br>
+        <br><br>
+        <a style="font-size:50px;">급식 순서</a>
+        <div id="clock"></h1>
+        <table class="table">
+            <th>시간</th>
+            <th>반(급식실 입구 왼쪽)</th>
+            <th>반(급식실 입구 오른쪽)</th>
+            <tr>
+                <td>11:30</td>
+                <td>1반</td>
+                <td>5반</td>
+            </tr>
+            <tr>
+                <td>11:35</td>
+                <td>2반</td>
+                <td>6반</td>
+            </tr>
+            <tr>
+                <td>11:35</td>
+                <td>3반</td>
+                <td>7반</td>
+            </tr>
+            <tr>
+                <td>11:35</td>
+                <td>4반</td>
+                <td>8반</td>
+            </tr>
+            <tr>
+                <td>11:35</td>
+                <td>5반</td>
+                <td>9반</td>
+            </tr>
+            </table>
+
+    </body>
+</html>
