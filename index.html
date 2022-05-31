@@ -1,23 +1,90 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h1 style="text-align:center;">오늘의 급식<div id="current_date"></h1>
+        <meta charset="UTF-8">
+            <h1>오늘의 급식<div id="current_date"></h1>
             <script>
             date = new Date();
             month = date.getMonth() + 1;
             day = date.getDate();
             document.getElementById("current_date").innerHTML = month + "월" + day+ "일";
-            
             const clock = document.getElementById("clock").innerHTML=hour+":"+minutes+":"+second;
-            
-            function getClock(){
-                const now = new Date();
-                const hour = String(now.getHours()).padStart(2,"0");
-                const minutes = String(now.getMinutes()).padStart(2,"0");
-                const second = String(now.getSeconds()).padStart(2,"0");
-            }
-            getClock();
-            setInterval(getClock, 1000);
+            </script>
+            <style>
+                #divClock{
+                    font-size: 30px;
+                    color:green;
+                }
+            </style>
+            <script>
+                function colorChange(n,targetId){
+                    if(n==0){
+                        var tcolor=["#168","#FFFFFF"];
+                        var bodyTag=document.getElementById(targetId);
+                        bodyTag.style.background=tcolor[0];
+                        bodyTag.style.color=tcolor[1];
+                    }else if(n==1){
+                        var tcolor=["#FFFFFF","#000000"];
+                        var bodyTag=document.getElementById(targetId);
+                        bodyTag.style.background=tcolor[0];
+                        bodyTag.style.color=tcolor[1];
+                    }
+                }
+            </script>
+            <script type="text/javascript">
+                function showClock(){
+                    var currentDate=new Date();
+                    var divClock=document.getElementById('divClock');
+                    var msg="현재 시간: ";
+                    if(currentDate.getHours()>12){
+                        msg+="오후";
+                        msg+=currentDate.getHours()-12+"시";
+                    }else{
+                        msg+="오전";
+                        msg+=currentDate.getHours()+"시";
+
+                        if(currentDate.getHours()==11){
+                            if(currentDate.getMinutes()>=30&&currentDate.getMinutes()<32){
+                                colorChange(0,0);
+                                colorChange(0,1);
+                            }else if(currentDate.getMinutes()>=32&&currentDate.getMinutes()<34){
+                                colorChange(0,2);
+                                colorChange(0,3);
+                                colorChange(1,0);
+                                colorChange(1,1);
+                            }else if(currentDate.getMinutes()>=34&&currentDate.getMinutes()<36){
+                                colorChange(0,4);
+                                colorChange(0,5);
+                                colorChange(1,2);
+                                colorChange(1,3);
+                            }else if(currentDate.getMinutes()>=36&&currentDate.getMinutes()<38){
+                                colorChange(0,6);
+                                colorChange(0,7);
+                                colorChange(1,4);
+                                colorChange(1,5);
+                            }else if(currentDate.getMinutes()>=38&&currentDate.getMinutes()<40){
+                                colorChange(0,8);
+                                colorChange(0,9);
+                                colorChange(1,6);
+                                colorChange(1,7);
+                            }else{
+                                colorChange(1,8);
+                                colorChange(1,9);
+                            }
+                        }
+                    }
+                    msg+=currentDate.getMinutes()+"분";
+                    msg+=currentDate.getSeconds()+"초";
+
+                    divClock.innerText=msg;
+
+                    if(currentDate.getMinutes()>58){
+                        divClock.style.color="red";
+                    }else
+                        divClock.style.color="green";
+
+                    setTimeout(showClock,1000);
+                }
             </script>
         <style>
             .table{
@@ -31,7 +98,6 @@
             }
             .table th, .table td {
                 padding: 10px;
-                border: 1px solid #ddd;
             }
             .table th:first-child, .table td:first-child {
                 border-left: 0;
@@ -49,48 +115,75 @@
     </head>
     <body>
         <br>
-        
-        <a style="font-size:50px;">조식</a>&emsp;&emsp;<a style="font-size:50px;">중식</a>&emsp;&emsp;<a style="font-size:50px;">석식</a><br>
-        <a>기본유부초밥</a>&emsp;&emsp;<a> 흑현미잡곡밥</a>&emsp;&emsp;<a>쌀밥</a><br>
-        <a>어묵우동</a>&emsp;&emsp;<a> </a>&emsp;&emsp;<a>시금치된장국</a>&emsp;&emsp;<a>돈육김치찌개</a><br>
-        <a style="color:white; background-color:rgb(255, 100, 100)">닭봉조림</a>&emsp;&emsp;&emsp;&emsp;<a> 김치제육볶음</a>&emsp;&emsp;<a>햄날치알계란말이</a><br>
-        <a>깍두기</a>&emsp;&emsp;&emsp;&emsp;&emsp;<a> 총각김치</a>&emsp;&emsp;&emsp;&emsp;<a style="color:white; background-color:rgb(255, 100, 100)">한입김말이강정</a>&emsp;&emsp;<br>
-        <a>한라봉주스 </a>&emsp;&emsp;&emsp;<a style="color:white; background-color:rgb(255, 100, 100)">모짜치즈볼</a>&emsp;&emsp;&emsp;<a>깍두기</a><br>
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a> 청포도</a>&emsp;&emsp;&emsp;&emsp;&emsp;<a style="color:white; background-color:rgb(255, 100, 100)">아이스슈/바닐라</a><br>
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a> 제주감귤주스100</a><br>
+        <table>
+            <th style="font-size:50px;">조식</th>
+            <th style="font-size:50px;">중식</th>
+            <th style="font-size:50px;">석식</th>
+            <tr>
+                <td>라이코펜쌀밥</td>
+                <td>고구마카레라이스</td>
+                <td>현미찹쌀밥</td>
+            </tr>
+            <tr>
+                <td>얼큰감자두부국</td>
+                <td>어묵미소국</td>
+                <td>아욱수제비국</td>
+            </tr>
+            <tr>
+                <td>불어묵고추장볶음</td>
+                <td>청경채사과무침</td>
+                <td>마카로니콘샐러드</td>
+            </tr>
+            <tr>
+                <td style="color:white; background-color:rgb(255, 100, 100)">찹쌀등심탕수육</td>
+                <td style="color:white; background-color:rgb(255, 100, 100)">모짜렐라인더핫도그</td>
+                <td style="color:white; background-color:rgb(255, 100, 100)">삼겹살김치볶음</td>
+            </tr>
+            <tr>
+                <td>배추김치</td>
+                <td>배추김치</td>
+                <td>수제망고스무디</td>
+            </tr>
+            <tr>
+                <td>시리얼우유</td>
+                <td>무항생사과요거트</td>
+                <td></td>
+            </tr>
+        </table>
         <br><br>
         <a style="font-size:50px;">급식 순서</a>
-        <div id="clock"></h1>
+        <body onload="showClock()">
+            <div id="divClock" class="clock"></div>
         <table class="table">
             <th>시간</th>
             <th>반(급식실 입구 왼쪽)</th>
             <th>반(급식실 입구 오른쪽)</th>
             <tr>
                 <td>11:30</td>
-                <td>1반</td>
-                <td>5반</td>
+                <td id="0">1반</td>
+                <td id="1">5반</td>
             </tr>
             <tr>
-                <td>11:35</td>
-                <td>2반</td>
-                <td>6반</td>
+                <td>11:32</td>
+                <td id="2">2반</td>
+                <td id="3">6반</td>
             </tr>
             <tr>
-                <td>11:35</td>
-                <td>3반</td>
-                <td>7반</td>
+                <td>11:34</td>
+                <td id="4">3반</td>
+                <td id="5">7반</td>
             </tr>
             <tr>
-                <td>11:35</td>
-                <td>4반</td>
-                <td>8반</td>
+                <td>11:36</td>
+                <td id="6">4반</td>
+                <td id="7">8반</td>
             </tr>
             <tr>
-                <td>11:35</td>
-                <td>5반</td>
-                <td>9반</td>
+                <td>11:38</td>
+                <td id="8">5반</td>
+                <td id="9">9반</td>
             </tr>
             </table>
-
+        </body>
     </body>
 </html>
