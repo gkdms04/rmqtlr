@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-            <h1>오늘의 급식<div id="current_date"></h1>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <center><h1>오늘의 급식<div id="current_date"></h1></center>
             <script>
             date = new Date();
             month = date.getMonth() + 1;
@@ -87,10 +88,7 @@
                 }
             </script>
         <style>
-            .table{
-                border-top: 3px solid #168;
-                border-bottom: 3px solid #168;
-            }
+            
             .table th{
                 color: #168;
                 background: #f0f6f9;
@@ -116,75 +114,77 @@
     <body>
         <!--style="color:white; background-color:rgb(255, 100, 100)"-->     
         <br>
-        <table>
-            <th style="font-size:50px;">조식</th>
-            <th style="font-size:50px;">중식</th>
-            <th style="font-size:50px;">석식</th>
-            <tr>
-                <td>낙지김치죽</td>
-                <td>기장강황쌀밥</td>
-                <td>쌀밥</td>
-            </tr>
-            <tr>
-                <td style="color:white; background-color:rgb(255, 100, 100)">가츠산도</td>
-                <td>오징어새뱅이찌개</td>
-                <td>양배추쌈/쌈장</td>
-            </tr>
-            <tr>
-                <td>깍두기</td>
-                <td>삼색감자채볶음</td>
-                <td style="color:white; background-color:rgb(255, 100, 100)">된장불고기/파채/소스</td>
-            </tr>
-            <tr>
-                <td>시리얼/우유</td>
-                <td style="color:white; background-color:rgb(255, 100, 100)">블랙알리오올리오치킨</td>
-                <td>배추김치</td>
-            </tr>
-            <tr>
-                <td>참외</td>
-                <td>배추김치</td>
-                <td style="color:white; background-color:rgb(255, 100, 100)">초코두유</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>쑥인절미</td>
-                <td style="color:white; background-color:rgb(255, 100, 100)">명란바게트</td>
-            </tr>
-        </table>
-        <br><br>
-        <a style="font-size:50px;">급식 순서</a>
-        <body onload="showClock()">
-            <div id="divClock" class="clock"></div>
-        <table class="table">
-            <th>시간</th>
-            <th>반(급식실 입구 왼쪽)</th>
-            <th>반(급식실 입구 오른쪽)</th>
-            <tr>
-                <td>11:30</td>
-                <td id="0">1반</td>
-                <td id="1">5반</td>
-            </tr>
-            <tr>
-                <td>11:32</td>
-                <td id="2">2반</td>
-                <td id="3">6반</td>
-            </tr>
-            <tr>
-                <td>11:34</td>
-                <td id="4">3반</td>
-                <td id="5">7반</td>
-            </tr>
-            <tr>
-                <td>11:36</td>
-                <td id="6">4반</td>
-                <td id="7">8반</td>
-            </tr>
-            <tr>
-                <td>11:38</td>
-                <td id="8">5반</td>
-                <td id="9">9반</td>
-            </tr>
+        <center>
+            <table>
+                <th style="font-size:50px;">조식</th>
+                <th style="font-size:50px;">중식</th>
+                <th style="font-size:50px;">석식</th>
+                <tr>
+                    <td>슈퍼자미쌀밥</td>
+                    <td>버섯카로틴쌀밥</td>
+                    <td style="color:white; background-color:rgb(255, 100, 100)">새우굴소스볶음밥</td>
+                </tr>
+                <tr>
+                    <td style="color:white; background-color:rgb(255, 100, 100)">햄섞어찌개</td>
+                    <td style="color:white; background-color:rgb(255, 100, 100)">한우떡국</td>
+                    <td>양지쌀국수</td>
+                </tr>
+                <tr>
+                    <td>느타리버섯볶음</td>
+                    <td>날치알계란찜</td>
+                    <td style="color:white; background-color:rgb(255, 100, 100)">춘권/칠리소스</td>
+                </tr>
+                <tr>
+                    <td style="color:white; background-color:rgb(255, 100, 100)">닭다리(북채)바베큐구이</td>
+                    <td>맑은콩나물무침</td>
+                    <td>배추김치</td>
+                </tr>
+                <tr>
+                    <td>깍두기</td>
+                    <td style="color:white; background-color:rgb(255, 100, 100)">쭈꾸미불고기</td>
+                    <td style="color:white; background-color:rgb(255, 100, 100)">엔요구르트</td>
+                </tr>
+                <tr>
+                    <td style="color:white; background-color:rgb(255, 100, 100)">국화빵</td>
+                    <td>배추김치</td>
+                    <td></td>
+                </tr>
             </table>
-        </body>
+            <br><br>
+            <a style="font-size:50px;">급식 순서</a>
+            <body onload="showClock()">
+                <div id="divClock" class="clock"></div>
+            <table class="table">
+                <th>시간</th>
+                <th>반(급식실 입구 왼쪽)</th>
+                <th>반(급식실 입구 오른쪽)</th>
+                <tr>
+                    <td>11:30</td>
+                    <td id="0">2반</td>
+                    <td id="1">6반</td>
+                </tr>
+                <tr>
+                    <td>11:32</td>
+                    <td id="2">3반</td>
+                    <td id="3">7반</td>
+                </tr>
+                <tr>
+                    <td>11:34</td>
+                    <td id="4">4반</td>
+                    <td id="5">8반</td>
+                </tr>
+                <tr>
+                    <td>11:36</td>
+                    <td id="6"></td>
+                    <td id="7">9반</td>
+                </tr>
+                <tr>
+                    <td>11:38</td>
+                    <td id="8">1반</td>
+                    <td id="9">5반</td>
+                </tr>
+                </table>
+            </body>
+        </center>
     </body>
 </html>
