@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <center><h1>오늘의 급식<div id="current_date"></h1></center>
+            //<center><h1>오늘의 급식<div id="current_date"></h1></center>
+            <center><h1>오늘의 급식</h1><br><h1>6월7일</h1></center>
             <script>
             date = new Date();
             month = date.getMonth() + 1;
@@ -37,15 +38,14 @@
                     var currentDate=new Date();
                     var divClock=document.getElementById('divClock');
                     var msg="현재 시간: ";
-                    if(currentDate.getHours()>12){
-                        msg+="오후";
-                        msg+=currentDate.getHours()-12+"시";
-                    }else{
-                        msg+="오전";
-                        msg+=currentDate.getHours()+"시";
+                    //if(currentDate.getHours()>12){
+                        //msg+="오후";
+                        //msg+=currentDate.getHours()-12+"시";
+                    //}else{
+                        //msg+="오전";
+                        //msg+=currentDate.getHours()+"시";
 
-                        if(currentDate.getHours()==11){
-                            if(currentDate.getMinutes()>=30&&currentDate.getMinutes()<32){
+                        if(currentDate.getMinutes()>=30&&currentDate.getMinutes()<32){
                                 colorChange(0,0);
                                 colorChange(0,1);
                             }else if(currentDate.getMinutes()>=32&&currentDate.getMinutes()<34){
@@ -72,8 +72,8 @@
                                 colorChange(1,8);
                                 colorChange(1,9);
                             }
-                        }
                     }
+                    msg+="11시";
                     msg+=currentDate.getMinutes()+"분";
                     msg+=currentDate.getSeconds()+"초";
 
